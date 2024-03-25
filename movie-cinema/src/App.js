@@ -1,45 +1,69 @@
 import { Component } from "react";
+import Header from "./component/Header.js";
+import Car from "./component/Car.js";
+import User from "./component/User.js";
+import Footer from "./component/Footer.js";
+import img1 from "./component/dada.jpg";
+import img2 from "./component/aneh.png";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <h1>Hello World</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem rerum
-        placeat, illo amet tempore at similique ratione eum laudantium suscipit
-        eius tempora debitis tenetur consectetur voluptates velit temporibus
-        odit, praesentium totam minus fugit. Adipisci ipsam consequatur minus,
-        reprehenderit maiores similique illum cumque assumenda sit dignissimos
-        voluptatem necessitatibus sapiente cupiditate aut!
-      </p>
-      <Footer />
+      {/* jika ingin memanggil tipe data int maka harus memakai kurung kurawal, 
+          dan jika tipe data boolean maka pake kurung kurawal,
+          dan jika tipe data array maka harus kurung kurawal
+      */}
+      <Car 
+        gambar={img1}
+        merk ="Ferrari" 
+        harga ={5} 
+        isNew={true} 
+        colors={["Hitam", "Putih", "Abu-abu"]} 
+        beli={() => alert("Sudah Dibeli")}   
+      />
+      {/* <User 
+        nama = "Haikal"
+        alamat = "Bandung"
+        angkatan = {11}
+        hobi = {["Makan", "Tidur", "Ngoding"]}
+        isStatus = {false}
+        gambar="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149329.png"  
+        message = {() => alert(`Profil nama Telah dibuka`)} 
+        
+      />
+      <User 
+        nama = "Agus"
+        alamat = "Sukabumi"
+        angkatan = {5}
+        hobi = {["Mandi", "Tidur", "Ngopi", "Ngoding"]}
+        isStatus = {true}
+        gambar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG1hjynbpQaeK6JUxCK6WyZ1E5uJmjAxQncw&usqp=CAU"
+        message = {() => alert(`Profil nama Telah dibuka`)}   
+      />
+      <User 
+        nama = "Sukijat"
+        alamat = "Magelang"
+        angkatan = {12}
+        hobi = {["Makan", "Gak Tidur", "Ngoding"]}
+        isStatus = {false}
+        gambar={img1}
+        message = {() => alert(`Profil nama Telah dibuka`)}   
+      />
+      <User 
+        nama = "Samsul"
+        alamat = "Jakarta"
+        angkatan = {8}
+        hobi = {["Kurang Makan", "Tidur Lagi", "Ngoding"]}
+        isStatus = {true}
+        gambar={img2}
+        message = {() => alert(`Profil nama Telah dibuka`)}   
+      /> */}
+      <Footer nama="Haikal" />
     </div>
   );
 }
 
-// cara penulisan komponen harus di awali dengan kapital
-const Header = () => {
-  return (
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Login</li>
-      </ul>
-    </nav>
-  );
-};
-
-class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <h3>Copyright &copy;2024 Developed by Haikal</h3>
-        <span>Make with &#10084</span>
-      </footer>
-    );
-  };
-};
 
 export default App;
