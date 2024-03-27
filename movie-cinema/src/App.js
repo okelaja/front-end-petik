@@ -1,28 +1,29 @@
 import { Component } from "react";
-import Header from "./component/Header.js";
-import Car from "./component/Car.js";
-import User from "./component/User.js";
-import Footer from "./component/Footer.js";
-import img1 from "./component/dada.jpg";
-import img2 from "./component/aneh.png";
+import Header from "./component/Navbar/Navbar.js";
+import Main from "./component/Main/Main.js";
+import Movie from "./component/Movie/Movie.js";
+import Car from "./component/Car/Car.js";
+import User from "./component/User/User.js";
+import Footer from "./component/Footer/Footer.js";
+import img1 from "./component/Img/aneh.png";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Hello World</h1>
+      <Main />
       {/* jika ingin memanggil tipe data int maka harus memakai kurung kurawal, 
           dan jika tipe data boolean maka pake kurung kurawal,
           dan jika tipe data array maka harus kurung kurawal
       */}
-      <Car 
+      {/* <Car 
         gambar={img1}
         merk ="Ferrari" 
         harga ={5} 
         isNew={true} 
         colors={["Hitam", "Putih", "Abu-abu"]} 
         beli={() => alert("Sudah Dibeli")}   
-      />
+      /> */}
       {/* <User 
         nama = "Haikal"
         alamat = "Bandung"

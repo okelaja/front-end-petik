@@ -1,4 +1,5 @@
-import dada from "./dada.jpg"
+import dada from "../Img/dada.jpg"
+import aneh from "../Img/aneh.png"
 // ini konten
 // tag <> </> di sebut pragment
 const Car = (props) => {
@@ -7,9 +8,9 @@ const Car = (props) => {
     return (
       <>
       <img 
-        src={dada}
+        src={aneh}
         alt="foto-mobil"
-        width={200}   
+        width={200}     
       />
       <h3>Merk Mobil : {merk}</h3>
       <h4>Harga Mobil : {harga} Miliar</h4> 
