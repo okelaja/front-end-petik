@@ -1,0 +1,38 @@
+/* .barang-container {
+    display: flex;
+    grid-template-columns: repeat(5,1fr);
+    gap:16px;
+} */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.barang-container {
+    display: flex;
+    padding-top:4% ;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Untuk membuat jarak yang sama antar kolom */
+  }
+  
+  .container {
+    width: 23%; /* Lebar setiap kolom */
+    margin-bottom: 20px; /* Jarak antar baris */
+  }
+  
+  .row {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-top: 10px;
+  }
+  
