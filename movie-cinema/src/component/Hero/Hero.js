@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="container">
         <section className="hero">
           <div className="hero-left">
-            <h2 className="hero-title">Title</h2>
+            <h1 className="hero-title">Hallo Haikal </h1>
             <h3 className="hero-genre">Genre :</h3>
             <p className="hero-description">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime,

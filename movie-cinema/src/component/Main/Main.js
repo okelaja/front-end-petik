@@ -54,7 +54,7 @@ const Main = () => {
     <div className="content">
       <Hero />
       <Movies />
-      {
+        {/* {
             datas.map((data) => {
                 return (
                     <User
@@ -64,7 +64,7 @@ const Main = () => {
                     />
                 );
             })
-        }
+        } */}
     </div>
   );
 };

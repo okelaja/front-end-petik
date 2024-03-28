@@ -6,12 +6,15 @@ import Car from "./component/Car/Car.js";
 import User from "./component/User/User.js";
 import Footer from "./component/Footer/Footer.js";
 import img1 from "./component/Img/aneh.png";
+import AddMovieForm from "./component/AddMovieForm/AddMovieForm.js";
 
 function App() {
+
   return (
     <div className="App">
       <Header />
       <Main />
+      
       {/* jika ingin memanggil tipe data int maka harus memakai kurung kurawal, 
           dan jika tipe data boolean maka pake kurung kurawal,
           dan jika tipe data array maka harus kurung kurawal
