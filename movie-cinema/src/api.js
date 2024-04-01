@@ -20,3 +20,9 @@ export const getDetailMovie = async () => {
 
 // top rated
 
+export const getTopRated = async () => {
+    const movie = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}`
+    );
+
+    return movie.data.results;
+};

@@ -5,7 +5,7 @@ const Popular = () => {
     return (
         <div className="">
             <h1>Popular</h1>
-            <Movies/>
+            <Movies />
         </div>
     )
 }
