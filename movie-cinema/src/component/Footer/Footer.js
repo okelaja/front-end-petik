@@ -9,7 +9,10 @@ class Footer extends Component {
           <div className="footer-column">
             <h3 className="footer-title">Tentang Kami</h3>
             <p className="footer-text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem sapiente rem excepturi cumque. Maiores, neque! Odio, iure sed. Nulla ipsum vitae harum ab consequatur quisquam nisi iure hic odio explicabo.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem sapiente rem excepturi cumque. Maiores, neque! Odio,
+              iure sed. Nulla ipsum vitae harum ab consequatur quisquam nisi
+              iure hic odio explicabo.
             </p>
           </div>
           <div className="footer-column">

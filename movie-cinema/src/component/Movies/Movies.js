@@ -1,90 +1,68 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddMovieForm from "../AddMovieForm/AddMovieForm.js";
 import Movie from "../Movie/Movie.js";
-import './Movies.css'
+import "./Movies.css";
+import { getMovieList } from "../../api.js";
+
 
 const Movies = () => {
-    // ini pembuatan state di class komponen
-    // const [counter, setCounter] = useState (0);
-    //     const increment = () => {
-    //         setCounter(prevCount => prevCount + 1);
-    //     };
-    //     const decrement = () => {
-    //         setCounter(prevCount => prevCount - 1);
-    //     };
-    
+  // ini pembuatan state di class komponen
+  // const [counter, setCounter] = useState (0);
+  //     const increment = () => {
+  //         setCounter(prevCount => prevCount + 1);
+  //     };
+  //     const decrement = () => {
+  //         setCounter(prevCount => prevCount - 1);
+  //     };
 
-    const [datas, setDatas] = useState([
-        {
-            title : "Dilan 1990 (2018)",
-            year : 2018,
-            genre : "Romance",
-            poster : "http://picsum.photos/200/300"
-        },
-        {
-            title : " Everything Everywhere All at Once (2022)",
-            year : 2022,
-            genre : "Action",
-            poster : "http://picsum.photos/200/300"
-        },
-        {
-            title : "Habibie & Ainun (2012)",
-            year : 2012,
-            genre : "Romance",
-            poster : "http://picsum.photos/200/300"
-        },
-        {
-            title : " Top Gun: Maverick (2022)",
-            year : 2022,
-            genre : "Action",
-            poster : "http://picsum.photos/200/300"
-        },
-        {
-            title : "Extraction (2020)",
-            year : 2020,
-            genre : "Narkotic",
-            poster : "http://picsum.photos/200/300"
-        },
-    ]);
+  const [datas, setDatas] = useState([]);
 
-    const addMovie =(movie) => {
-        setDatas([...datas, movie])
+  const addMovie = (movie) => {
+    setDatas([...datas, movie]);
+  };
+
+  useEffect(() => {
+    // untuk menangkap result api
+    getMovieList().then((result) => {
+      setDatas(result);
+    });
+  },[]);
+  
+  console.log(datas);
+
+  const handleClick = () => {
+    const movie = {
+      title: "Amazing Spiderman",
+      year: 2012,
+      poster: "http://picsum.photos/200/300",
+      genre: "Action",
     };
-
-
-    const handleClick = () => {
-        const movie = {
-            title : "Amazing Spiderman",
-            year : 2012,
-            poster : "http://picsum.photos/200/300",
-            genre : "Action"
-        };
     //    setDatas([...datas, movie]);
-    };
+  };
 
-    return (
-        <div className="">
-        <h2>Lates Movies</h2>
-            <div className="movies-container">
-                {
-                    datas.map((data, index) => {
-                        return (
-                            <Movie
-                            title={data.title}
-                            year={data.year}
-                            genre={data.genre}
-                            poster={data.poster}
-                            />
-                        );
-                    })}
-                {/* <button onClick={handleClick}>Add Movie</button> */}
-                {/* <button onClick={increment}>tambah</button>
+  return (
+    <div className="">
+      <h2></h2>
+      <div className="movies-container">
+        {datas.map((data, index) => {
+          return (
+            <Movie
+              id={data.id}
+              title={data.title}
+              year={data.release_date}
+              poster={data.poster_path}
+              average={data.vote_average}
+              count={data.vote_count}
+            />
+          );
+        })}
+        {/* <button onClick={handleClick}>Add Movie</button> */}
+        {/* <button onClick={increment}>tambah</button>
                 <button onClick={decrement}>kurang</button> */}
-            </div>
-            <AddMovieForm onAddMovie={addMovie}/>
-        </div>
-    );
-           
+      </div>
+      <AddMovieForm onAddMovie={addMovie} />
+    </div>
+  );
 };
 
 export default Movies;

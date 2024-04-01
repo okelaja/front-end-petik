@@ -7,13 +7,28 @@ import User from "./component/User/User.js";
 import Footer from "./component/Footer/Footer.js";
 import img1 from "./component/Img/aneh.png";
 import AddMovieForm from "./component/AddMovieForm/AddMovieForm.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home.js";
+import Popular from "./pages/movie/Popular.js";
+import TopRated from "./pages/movie/TopRated.js";
+import Detail from "./pages/movie/Detail.js";
+
 
 function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Main />
+
+      <BrowserRouter>
+        <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/popular" element={<Popular />} />
+            <Route path="/top" element={<TopRated />} />
+            <Route path="/detail/:id" element={<Detail />} />
+          </Routes>
+      </BrowserRouter>
+    
       
       {/* jika ingin memanggil tipe data int maka harus memakai kurung kurawal, 
           dan jika tipe data boolean maka pake kurung kurawal,

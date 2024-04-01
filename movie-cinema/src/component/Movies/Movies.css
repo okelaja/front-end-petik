@@ -1,19 +1,18 @@
 .movies-container {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap:34px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 34px;
 }
 
 /* medium screen */
 @media (max-width: 768px) {
-    .movies-container {
-        grid-template-columns: repeat(2,1fr);
-    }
+  .movies-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
-    .movies-container {
-        grid-template-columns: 1fr;
-    }
+  .movies-container {
+    grid-template-columns: 1fr;
+  }
 }
-    
