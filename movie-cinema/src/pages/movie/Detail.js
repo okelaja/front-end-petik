@@ -1,21 +1,33 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { getDetailMovie } from "../../api";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+// import { getDetailMovie } from '../../api';
 
-const Detail = () => {
-    // Menggunakan useParams untuk menangkap parameter id dari URl
-    let { id, title } = useParams();
-    return (
-        <div className="container-detail">
+const MovieDetail = ({ id }) => {
+  const [movie, setMovie] = useState(null);
 
-            {/* <button><NavLink to={"/"}>Home</NavLink></button> */}
-            <h1>Detail</h1>            
-            <h3>{title}</h3>
-            <p>Parameter  ID: {id}</p>
-        </div>
-    )
-    }
+  useEffect(() => {
+    const fetchMovie = async () => {
+      try {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=8e465ff28280979967a70c1462d19f7f`);
+        setMovie(response.data);
+      } catch (error) {
+        console.error('Error fetching movie:', error);
+      }
+    };
 
-export default Detail
+    fetchMovie();
+  }, [id]);
 
+  if (!movie) {
+    return <div></div>;
+  }
+
+  return (
+    <div>
+      <h1>{movie.title}</h1>
+      <p>{movie.overview}</p>
+    </div>
+  );
+};
+
+export default MovieDetail;

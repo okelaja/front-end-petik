@@ -5,7 +5,7 @@ const AddMovieForm = ({ onAddMovie }) => {
   const [formData, setFormData] = useState({
     title: "",
     year: "",
-    Image: "",
+    poster: "",
     genre: "",
   });
 
